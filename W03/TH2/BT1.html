@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="input">
+    <button type="button" onclick="calculator()">Tính số ngày</button>
+    <p id="output"></p>
+    <script>
+        const calculator = () => {
+            const input = parseInt(document.querySelector('#input').value);
+            let num;
+
+            switch (input) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    num = 31
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    num = 30
+                    break;
+                case 2:
+                    num = '28 hoặc 29';
+                    break;
+                default:
+                    break;
+            }
+            const result = document.querySelector('#output').innerHTML = `Tháng ${input} có ${num} ngày`;
+
+        };
+    </script>
+</body>
+</html>

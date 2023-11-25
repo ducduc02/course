@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="playGame()">Chơi</button>
+
+    <script>
+        function playGame() {
+
+            var max = parseInt(prompt('Nhập vào khoảng muốn đoán:'));
+
+            var randomNumber = Math.floor(Math.random() * max) + 1;
+
+            do {
+                chooseNumber = parseInt(prompt(`Nhập vào số trong khoảng 1 đến ${max}`));
+                
+                if (chooseNumber === randomNumber) {
+                    alert('Chúc mừng! Bạn đã đoán đúng.');
+                } else {
+                    alert('Số bạn đoán không chính xác. Hãy thử lại!');
+                }
+
+            } while (chooseNumber !== randomNumber); // điều kiện dừng
+            // vòng lặp sẽ tiếp tục nếu chooseNumber !== randomNumber
+        }
+    </script>
+</body>
+
+</html>

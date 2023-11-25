@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button type="button" onclick="calculator()">Click</button>
+    <script>
+        function calculator() {
+            var input = parseInt(document.querySelector('#input').value);
+            var total = 0;
+
+            for (var i = 1; i<= input; i++){
+                total += i;
+            }
+            console.log(total);
+        }
+    </script>
+</body>
+</html>

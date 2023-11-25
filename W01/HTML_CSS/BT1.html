@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
+            padding: 20px;
+            width: 400px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Đăng ký tài khoản</h2>
+        <form action="" method="get">
+            <div class="form-group">
+                <label for="name"><b>Họ và tên:</b></label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email"><B>Email:</B></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone"><b>Số điện thoại:</b></label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label class="gender-label"><b>Số điện thoại:</b></label>
+                <div class="gender-options">
+                    <div class="gender-option">
+                        <input class="gender-radio" type="radio" id="gender_male" name="gender" value="Nam" required>
+                        <label for="gender_male" class="gender-radio-label">Nam</label>
+                    
+                
+                        <input class="gender-radio" type="radio" id="gender_female" name="gender" value="Nữ" required>
+                        <label for="gender_female" class="gender-radio-label">Nữ</label>
+                   
+                        <input class="gender-radio" type="radio" id="gender_other" name="gender" value="Khác" required>
+                        <label for="gender_other" class="gender-radio-label">Khác</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Đăng ký">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

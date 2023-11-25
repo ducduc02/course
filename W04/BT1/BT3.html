@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <button type="button" onclick="calculator()">Tính</button>
+    <p id="output"></p>
+    <script>
+        function calculator() {
+            var input = parseInt(document.querySelector('#input').value);
+
+            // Kiểm tra nếu không phải là số hoặc không có giá trị
+            if (isNaN(input) || input < 0) {
+                document.querySelector('#output').innerHTML = 'Vui lòng nhập một số nguyên không âm.';
+                return;
+            }
+            // Khởi tạo biến đảo ngược
+            var reversedNumber = 0;
+            
+            while (input > 0) {
+                 // Lấy chữ số cuối cùng của số gốc và thêm vào số đảo ngược
+                reversedNumber = reversedNumber * 10 + input % 10;
+                // Loại bỏ chữ số cuối cùng từ input
+                input = Math.floor(input / 10);
+            }
+            document.querySelector('#output').innerHTML = `Số đảo ngược là ${reversedNumber}`
+        }
+
+    </script>
+</body>
+
+</html>

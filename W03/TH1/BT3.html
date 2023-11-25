@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <b>Giá hoa quả</b><br>
+    <input type="text" id="input">
+    <button type="button" onclick="viewPrice()">Xem giá</button>
+    <p id="output"></p>
+
+    <script>
+        function viewPrice() {
+            const input = document.getElementById('input').value;
+            const output = document.getElementById('output');
+
+            var fruitPrice;
+
+            switch (input) {
+                case 'Ổi':
+                case 'Dưa Hấu':
+                    fruitPrice = 20000;
+                    break;
+                case 'Xoài':
+                    fruitPrice = 30000;
+                    break;
+                case 'Cam':
+                case 'Chôm Chôm':
+                    fruitPrice = 40000;
+                    break;
+                case 'Măng Cụt':
+                    fruitPrice = 50000;
+                    break;
+
+                default:
+                    fruitPrice = 'Không có loại hoa quả đó trong cửa hàng'
+                    break;
+            }
+            output.innerHTML = `Giá của <b>${input}</b> là : ${fruitPrice} VND`;
+
+        }
+
+    </script>
+</body>
+
+</html>

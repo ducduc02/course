@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputNumber">
+    <button type="button" onclick="Calculator()">Click</button>
+    <div id="output"></div>
+
+    <script>
+        
+        function Calculator() {
+            var num = parseFloat(document.querySelector('#inputNumber').value);
+
+            var canBacHai = Math.sqrt(num).toFixed(2);
+            var binhPhuong = Math.pow(num, 2);
+            var luyThua = num ** num;
+
+            var result = ` Can bac 2 cua ${num} la ${canBacHai} <br>
+                        Binh phuong cua ${num} la ${binhPhuong} <br>
+                        Luy thua cua ${num} la ${luyThua}
+            `;
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

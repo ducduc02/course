@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <br><br>
+    <button onclick="calculator('+')"> + </button>
+    <button onclick="calculator('-')"> - </button>
+    <button onclick="calculator('x')"> x </button>
+    <button onclick="calculator('/')"> / </button>
+    <br><br>
+    <b id="result"></b>
+
+    <script>
+        function calculator(operation) {
+            var num1 = parseInt(document.querySelector('#num1').value);
+            var num2 = parseInt(document.querySelector('#num2').value);
+            var output;
+            
+
+            switch (operation) {
+                case '+':
+                    output = num1 + num2;
+                    break;
+                case '-':
+                    output = num1 - num2;
+                    break;
+                case 'x':
+                    output = num1 * num2;
+                    break;
+                case '/':
+                    output = num1 / num2;
+                    break;
+                default:
+                    break;
+            }
+            
+            var resultElement = document.querySelector('#result');
+
+            resultElement.innerHTML = `Result: ${num1} ${operation} ${num2} = ${output}`
+            
+
+        }
+    </script>
+</body>
+</html>

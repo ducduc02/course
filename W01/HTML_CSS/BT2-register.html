@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 4px 4px 10px 10px gray;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            transition: border-color 0.3s;
+        }
+
+        button {
+            padding: 10px 20px;
+            color: #ffffff;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="reset"] {
+            background-color: red;
+            margin-left: 10px;
+            border: 1px solid white;
+        }
+
+        button[type="reset"]:hover {
+            background-color: white;
+            border: 1px solid red;
+            color: red;
+        }
+
+        button[type="submit"] {
+            background-color: blue;
+            margin-left: 10px;
+            border: 1px solid white;
+        }
+
+        button[type="submit"]:hover {
+            background-color: white;
+            border: 1px solid blue;
+            color: blue;
+        }
+
+        .btn-form {
+            text-align: center;
+        }
+
+        .form-group_gender {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .gender-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .gender-options {
+            display: flex;
+            gap: 20px;
+        }
+
+        .gender-option {
+            display: flex;
+            align-items: center;
+        }
+
+        .gender-radio {
+            margin-right: 5px;
+        }
+
+        .gender-radio-label {
+            margin-top: 13px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Đăng ký học viên</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="fullname">Họ và tên:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="form-group">
+                <label for="birthdate">Ngày sinh:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+            <div class="form-group_gender">
+                <label class="gender-label">Giới tính:</label>
+                <div class="gender-options">
+                    <div class="gender-option">
+                        <input class="gender-radio" type="radio" id="gender_male" name="gender" value="Nam" required>
+                        <label class="gender-radio-label" for="gender_male">Nam</label>
+                    </div>
+                    <div class="gender-option">
+                        <input class="gender-radio" type="radio" id="gender_female" name="gender" value="Nữ" required>
+                        <label class="gender-radio-label" for="gender_female">Nữ</label>
+                    </div>
+                    <div class="gender-option">
+                        <input class="gender-radio" type="radio" id="gender_other" name="gender" value="Khác" required>
+                        <label class="gender-radio-label" for="gender_other">Khác</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Địa chỉ:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="class">Lớp:</label>
+                <select id="class" name="class" required>
+                    <option value="" disabled selected>Chọn lớp đi bro</option>
+                    <option value="math">Toán</option>
+                    <option value="science">Khoa học</option>
+                    <option value="history">Lịch sử</option>
+                    <option value="english">Tiếng Anh</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Điện thoại:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="btn-form">
+                <button type="submit">Gửi thông tin</button>
+                <button type="reset">Nhập lại</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

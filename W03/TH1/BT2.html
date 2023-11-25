@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputHeight" placeholder="nhập chiều cao (m)">
+    <input type="text" id="inputWeight" placeholder="nhập cân nặng (m)">
+    <button type="button" onclick="calculatorBMI()">Convert</button>
+    <p id="output"></p>
+
+    <script>
+        function calculatorBMI() {
+            var height = parseFloat(document.querySelector('#inputHeight').value);
+            var weight = parseFloat(document.querySelector('#inputWeight').value);
+
+            var output = document.querySelector('#output')
+            var bmi = weight / (height * height);
+            var type;
+
+            if (bmi < 16) {
+                type = 'Gầy cấp độ III';
+            } else if (16 <= bmi && bmi < 17) {
+                type = 'Gầy cấp độ II';
+            } else if (17 <= bmi && bmi < 18.5) {
+                type = 'Gầy cấp độ I';
+            } else if (18.5 <= bmi && bmi < 25) {
+                type = 'Bình thường';
+            } else if (25 <= bmi && bmi < 30) {
+                type = 'Thừa cân';
+            } else if (30 <= bmi && bmi < 35) {
+                type = 'Béo phì độ I';
+            } else if (35 <= bmi && bmi < 40) {
+                type = 'Béo phì độ II';
+            } else if (bmi >= 40) {
+                type = 'Béo phì độ III';
+            } else {
+                type = 'Vui lòng nhập hợp lệ';
+            }
+
+            output.innerHTML = `Với chiều cao ${height}m và cân nặng ${weight}kg: ${type}`;
+        }
+    </script>
+</body>
+
+</html>

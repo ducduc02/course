@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <b>Tính điểm ĐH khối D</b><br>
+        <label for="">Môn Toán</label>
+        <input type="text" id="math"><br><br>
+        <label for="">Môn Văn</label>
+        <input type="text" id="literature"><br><br>
+        <label for="">Môn Anh</label>
+        <input type="text" id="english"><br><br>
+
+        <select id="point">
+            <option value="KV1">KV1</option>
+            <option value="KV2-NT">KV2-NT</option>
+            <option value="KV2">KV2</option>
+            <option value="KV3">KV3</option>
+        </select>
+        <button type="button" onclick="calculator()">Tính điểm</button>
+    </form>
+    <p id="output"></p>
+    <script>
+        function calculator() {
+            var math = parseFloat(document.querySelector('#math').value);
+            var literature = parseFloat(document.querySelector('#literature').value);
+            var english = parseFloat(document.querySelector('#english').value);
+
+            var pointValue = document.querySelector('#point').value;
+
+            var point;
+            switch (pointValue) {
+                case 'KV1':
+                    point = 0.75;
+                    break;
+                case 'KV2-NT':
+                    point = 0.5;
+                    break;
+                case 'KV2':
+                    point = 0.25;
+                    break;
+                case 'KV3':
+                    point = 0;
+                    break;
+                default:
+                    point = 0;
+            }
+
+            var total = math + literature + english + point;
+
+            const result = document.querySelector('#output').innerHTML = `Tổng điểm ĐH khối D của bạn là ${total}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+        <label>Amount</label>
+        <input type="text" id="amount">
+
+        <label>From Currency</label>
+        <select id="from-currency">
+            <option value="VND">Vietnam</option>
+            <option value="USD">USA</option>
+        </select>
+
+        <label>To Currency</label>
+        <select id="to-currency">
+            <option value="USD">USA</option>
+            <option value="VND">Vietnam</option>
+        </select>
+        <button type="button" onclick="convertMoney()">Convert</button>
+
+    <div id="converted"></div>
+
+    <script>
+        function convertMoney() {
+            var amount = parseFloat(document.getElementById('amount').value);
+            var fromCurrency = document.getElementById('from-currency').value;
+            var toCurrency = document.getElementById('to-currency').value;
+
+            var exchange = {
+                "VND-USD": 0.000043,
+                "USD-VND": 23000,
+                "USD-USD": 1,
+                "VND-VND": 1,
+            };
+
+            var rate = fromCurrency + '-' + toCurrency;
+        
+
+            if (rate in exchange) {
+                var result = amount * exchange[rate];
+                document.getElementById('converted').innerHTML = amount + ' ' + fromCurrency + ' = ' + result.toFixed(2) + ' ' + toCurrency;
+            } 
+        }
+    </script>
+</body>
+
+</html>

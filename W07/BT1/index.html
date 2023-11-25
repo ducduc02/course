@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Kiểm tra số chẵn lẻ : </span>
+    <input type="text" id="inputNumber">
+    <button type="button" onclick="calculator()">Result</button>
+    
+    <script>
+        function calculator() {
+            var inputNumber = parseInt(document.querySelector('#inputNumber').value);
+            if(inputNumber % 2 === 0) {
+                alert(`${inputNumber} là số chẵn`);
+            } else {
+                alert(`${inputNumber} là số lẻ`)
+            }
+        }
+    </script>
+</body>
+</html>

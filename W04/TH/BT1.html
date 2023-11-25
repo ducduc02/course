@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Khai báo biến 'sout' để lưu trữ mã HTML cho bảng
+        var sout;
+
+
+        // Khởi tạo 'sout' với thẻ mở đầu của bảng và các thuộc tính của nó
+        sout = "<table border='1' width='300' cellspacing='0' cellpadding='3'>";
+
+        // Sử dụng vòng lặp 'for' để lặp qua các hàng (i đại diện cho hàng)
+        for (i = 1; i <= 10; i++) {
+
+            // Thêm thẻ mở của hàng cho mỗi lần lặp
+            sout = sout + "<tr>";
+
+            // Sử dụng vòng lặp 'for' khác để lặp qua các cột (j đại diện cho cột)
+            for (j = 1; j <= 10; j++) {
+
+                // Bên trong vòng lặp lồng, thêm một ô bảng với tích của i và j
+                sout = sout + "<td>" + i * j + "</td>";
+            }
+
+            // Thêm thẻ đóng của hàng sau khi đã thêm tất cả các cột cho hàng hiện tại
+            sout = sout + "</tr>";
+        }
+
+         // Thêm thẻ đóng của bảng sau khi đã thêm tất cả các hàng và cột
+        sout = sout + "</table>";
+        document.write(sout)
+    </script>
+</body>
+
+</html>

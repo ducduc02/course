@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    var soTienVay = parseFloat(prompt("Nhập số tiền vay (triệu đồng):"));
+    var laiSuat = parseFloat(prompt("Nhập lãi suất hàng năm (%):"));
+    var soNam = parseInt(prompt("Nhập số năm:"));
+
+    var laiSuat = laiSuat / 100; 
+
+    var soTienLai = soTienVay * laiSuat; // so tien lai 1 nam
+
+
+    var soTienPhaiTra = soTienVay + soNam * soTienLai;
+    document.write(`Số tiền sau ${soNam} phải trả là ${soTienPhaiTra.toFixed(2)} triệu đồng`);
+
+</script>
+
+</html>
