@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Remote {
+            constructor(code) {
+                this.code = code;
+            }
+
+            controlChannel(tv, channel) {
+                console.log(`Remote ${this.code} is changing the channel to ${channel}.`);
+                tv.changeChannel(channel);
+            }
+
+            controlVolume(tv, increment) {
+                console.log(`Remote ${this.code} is adjusting the volume.`);
+                tv.adjustVolume(increment);
+            }
+
+            powerOn(tv) {
+                console.log(`Remote ${this.code} is turning on the TV.`);
+                tv.turnOn();
+            }
+
+            powerOff(tv) {
+                console.log(`Remote ${this.code} is turning off the TV.`);
+                tv.turnOff();
+            }
+        }
+
+        class TiVi {
+            constructor() {
+                this.currentChannel = 0;
+                this.currentVolume = 0;
+                this.power = false;
+            }
+
+            turnOn() {
+                console.log("TV is turned on.");
+                this.power = true;
+            }
+
+            turnOff() {
+                console.log("TV is turned off.");
+                this.power = false;
+            }
+
+            changeChannel(channel) {
+                if (this.power) {
+                    console.log(`TV is changing to channel ${channel}.`);
+                    this.currentChannel = channel;
+                } else {
+                    console.log("TV is turned off. Cannot change the channel.");
+                }
+            }
+
+            adjustVolume(increment) {
+                if (this.power) {
+                    console.log(`TV volume is adjusted by ${increment} units.`);
+                    this.currentVolume += increment;
+                } else {
+                    console.log("TV is turned off. Cannot adjust the volume.");
+                }
+            }
+        }
+
+        // Sử dụng chương trình
+        let myTv = new TiVi();
+        let myRemote = new Remote("XYZ");
+
+        myRemote.powerOn(myTv);
+        myRemote.controlChannel(myTv, 7);
+        myRemote.controlChannel(myTv, 3);
+        myRemote.controlVolume(myTv, 2);
+        myRemote.powerOff(myTv);
+
+    </script>
+</body>
+
+</html>
