@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        function footToMeter(foot) {
+            return 0.305 * foot;
+        }
+
+
+        function meterToFoot(meter) {
+            return 3.279 * meter;
+        }
+
+        let distanceInFeet = 10;
+        let distanceInMeters = footToMeter(distanceInFeet);
+        console.log(`${distanceInFeet} feet bằng ${distanceInMeters} meters`);
+
+        let distanceInMeters2 = 5;
+        let distanceInFeet2 = meterToFoot(distanceInMeters2);
+        console.log(`${distanceInMeters2} meters bằng ${distanceInFeet2} feet`);
+
+    </script>
+</body>
+
+</html>

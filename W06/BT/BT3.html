@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isPalindrome(s) {
+            // Hàm kiểm tra xem ký tự đầu tiên và ký tự cuối cùng của chuỗi có bằng nhau
+            function isSameFirstAndLast(str) {
+                return str[0] === str[str.length - 1];
+            }
+
+            if (s.length <= 1) {
+                return true;
+            }
+
+            if (!isSameFirstAndLast(s)) {
+                return false;
+            }
+
+            return isPalindrome(s.slice(1, -1));
+        }
+
+        // Test
+        console.log(isPalindrome("rotor"));   
+        console.log(isPalindrome("redder"));  
+        console.log(isPalindrome("motor"));   
+
+    </script>
+</body>
+
+</html>

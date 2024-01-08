@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function compareAndSum(param1, param2) {
+            if (param1 > param2) {
+                alert("Giá trị tham số thứ nhất lớn hơn tham số thứ hai.");
+            } else {
+                return param1 + param2;
+            }
+        }
+
+        // Sử dụng hàm
+        let result = compareAndSum(5, 10);
+        console.log(result);
+        let stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let constellations = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+        function findConstellation(starName) {
+            for (let i = 0; i < stars.length; i++) {
+                if (stars[i] === starName) {
+                    return constellations[i];
+                }
+            }
+            return "Không tìm thấy thông tin cho ngôi sao này.";
+        }
+
+        let userInput = prompt("Nhập tên ngôi sao:");
+        let resultConstellation = findConstellation(userInput);
+        alert(resultConstellation);
+        function square(number) {
+            return number * number;
+        }
+
+        // Gọi hàm với tham số là 5
+        console.log(square(5));
+        function calculateCircleArea(radius) {
+            return Math.PI * radius * radius;
+        }
+
+        function calculateCirclePerimeter(radius) {
+            return 2 * Math.PI * radius;
+        }
+
+        // Gọi hàm với bán kính là 3
+        console.log(calculateCircleArea(3));
+        console.log(calculateCirclePerimeter(3));
+
+    </script>
+</body>
+
+</html>
