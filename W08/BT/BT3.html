@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet">
+    <title>Caro Game</title>
+    <style>
+        #board {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .cell {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .cell:hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="board"></div>
+    <script>
+        const board = document.getElementById('board');
+        const cells = [];
+        const boardSize = 3;
+
+        for (let i = 0; i < boardSize; i++) {
+            cells[i] = [];
+            for (let j = 0; j < boardSize; j++) {
+                const cell = document.createElement('div');
+                cell.classList.add('cell');
+                cell.dataset.row = i;
+                cell.dataset.col = j;
+                cell.addEventListener('click', handleCellClick);
+                cells[i][j] = cell;
+                board.appendChild(cell);
+            }
+        }
+
+        let currentPlayer = 'X';
+
+        function handleCellClick(event) {
+            const cell = event.target;
+            const row = parseInt(cell.dataset.row);
+            const col = parseInt(cell.dataset.col);
+
+            if (!cell.textContent) {
+                cell.textContent = currentPlayer;
+                checkWinner(row, col);
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            }
+        }
+
+        function checkWinner(row, col) {
+            // Add logic to check for a winner
+            // For simplicity, let's assume a winner if any row, column, or diagonal has the same symbol (X or O).
+        }
+
+    </script>
+</body>
+
+</html>

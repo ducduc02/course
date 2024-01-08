@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Bulb</title>
+</head>
+<body>
+    <button id="toggleButton">Toggle Switch</button>
+    <div id="status"></div>
+
+    <script>
+        class LightBulb {
+            constructor() {
+                this.isOn = false;
+            }
+
+            turnOn() {
+                this.isOn = true;
+                return "Light bulb is ON.";
+            }
+
+            turnOff() {
+                this.isOn = false;
+                return "Light bulb is OFF.";
+            }
+
+            getStatus() {
+                return this.isOn ? "Light bulb is ON." : "Light bulb is OFF.";
+            }
+        }
+
+        class Switch {
+            constructor(bulb) {
+                this.connectedBulb = bulb;
+            }
+
+            toggle() {
+                if (this.connectedBulb.isOn) {
+                    return this.connectedBulb.turnOff();
+                } else {
+                    return this.connectedBulb.turnOn();
+                }
+            }
+        }
+
+        const bulb = new LightBulb();
+        const lightSwitch = new Switch(bulb);
+
+        const toggleButton = document.getElementById("toggleButton");
+        const statusDiv = document.getElementById("status");
+
+        toggleButton.addEventListener("click", function () {
+            const result = lightSwitch.toggle();
+            statusDiv.textContent = result;
+        });
+    </script>
+</body>
+</html>
