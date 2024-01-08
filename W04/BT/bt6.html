@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <button type="button" onclick="calculator()">Tính</button>
+
+    <script>
+        function calculator() {
+            var num1 = parseInt(document.querySelector('#num1').value);
+            var num2 = parseInt(document.querySelector('#num2').value);
+            var total =0;
+            for (i = num1; i <= num2; i++){
+                total += i;
+            }
+            document.write(`Tổng các số trong khoảng từ ${num1} đến ${num2} là ${total}`)
+ 
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <button type="button" onclick="calculator()">Tính</button>
+    <p id="output"></p>
+
+
+    <script>
+        function calculator() {
+            var input = +document.getElementById('input').value
+            var output = document.getElementById('output')
+            if (!isNaN(input)) {
+                var fib = []
+
+                if (input === 1) {
+                    fib.push(1)
+                } else if (input === 2) {
+                    fib.push(2)
+                }
+
+                if (input > 2) {
+                    fib.push(1, 1)
+
+                    var i = 2
+                    while (i < input) {
+                        var nextNumber = fib[i - 2] + fib[i - 1]
+                        fib.push(nextNumber)
+                        i++
+                    }
+                }
+                output.innerText = `Dãy số fib của bạn là : ${fib.join(', ')}`
+            } else {
+                output.innerText = 'Vui lòng nhập đúng định dạng'
+            }
+
+        }
+    </script>
+</body>
+
+</html>

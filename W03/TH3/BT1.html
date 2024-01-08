@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Lunar Year</title>
+</head>
+
+<body>
+
+
+    <label>Năm dương lịch:</label>
+    <input type="number" id="gregorianYear" placeholder="Nhập năm dương lịch">
+
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculate() {
+            // Get the Gregorian year from the input
+            var gregorianYear = document.getElementById("gregorianYear").value;
+
+            // Calculate Can and Chi
+            var [can, chi] = calculateCanChi(gregorianYear);
+
+            // Calculate the Lunar year
+            var lunarYear = can + " " + chi;
+
+            // Display the result
+            document.getElementById("result").innerText = "The Lunar year corresponding to the year " + gregorianYear + " is: " + lunarYear;
+        }
+
+        function calculateCanChi(gregorianYear) {
+        
+            var can = gregorianYear % 10;
+
+            var chi = gregorianYear % 12;
+
+            var canResult;
+            switch (can) {
+                case 0:
+                    canResult = "Canh";
+                    break;
+                case 1:
+                    canResult = "Tân";
+                    break;
+                case 2:
+                    canResult = "Nhâm";
+                    break;
+                case 3:
+                    canResult = "Quý";
+                    break;
+                case 4:
+                    canResult = "Giáp";
+                    break;
+                case 5:
+                    canResult = "Ất";
+                    break;
+                case 6:
+                    canResult = "Bính";
+                    break;
+                case 7:
+                    canResult = "Đinh";
+                    break;
+                case 8:
+                    canResult = "Mậu";
+                    break;
+                case 9:
+                    canResult = "Kỷ";
+                    break;
+                default:
+                    canResult = "";
+            }
+
+            var chiResult;
+            switch (chi) {
+                case 0:
+                    chiResult = "Thân";
+                    break;
+                case 1:
+                    chiResult = "Dậu";
+                    break;
+                case 2:
+                    chiResult = "Tuất";
+                    break;
+                case 3:
+                    chiResult = "Hợi";
+                    break;
+                case 4:
+                    chiResult = "Tý";
+                    break;
+                case 5:
+                    chiResult = "Sửu";
+                    break;
+                case 6:
+                    chiResult = "Dần";
+                    break;
+                case 7:
+                    chiResult = "Mẹo";
+                    break;
+                case 8:
+                    chiResult = "Thìn";
+                    break;
+                case 9:
+                    chiResult = "Tỵ";
+                    break;
+                case 10:
+                    chiResult = "Ngọ";
+                    break;
+                case 11:
+                    chiResult = "Mùi";
+                    break;
+                default:
+                    chiResult = "";
+            }
+
+            return [canResult, chiResult];
+        }
+    </script>
+
+</body>
+
+</html>

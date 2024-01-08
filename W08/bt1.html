@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle Object</title>
+</head>
+
+<body>
+
+    <canvas id="rectangleCanvas" width="400" height="300"></canvas>
+
+    <script>
+        class Rectangle {
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+            }
+
+            calculateArea() {
+                return this.width * this.height;
+            }
+
+            calculatePerimeter() {
+                return 2*(this.width+this.height);
+            }
+        }
+
+       
+        const rectangle1 = new Rectangle(50, 30);
+        console.log('Diện tích:', rectangle1.calculateArea());
+        console.log('Chu vi:', rectangle1.calculatePerimeter());
+    </script>
+
+</body>
+
+</html>

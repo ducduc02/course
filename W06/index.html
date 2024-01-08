@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        class Meo {
+            constructor(ten, canNang) {
+                this.ten = ten;
+                this.canNang = canNang;
+            }
+            an(klta) {
+                this.canNang+= 0.5*klta;
+            }
+            getInfo() {
+                return `Mèo ${this.ten}, cân nặng: ${this.canNang} kg`;
+            }
+        }
+
+        var meo = new Meo("Mèo", 3.5);
+        meo.an(1);
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

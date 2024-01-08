@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+</body>
+<script>
+    var array =[];
+    for (i=0; i< 10; i++) {
+        var num = +prompt(`Nhập số thứ ${i + 1}:`);
+        array.push(num);
+    }
+
+    
+    alert(`Mảng bạn vừa nhập vào là:[${array}]`)
+
+    var result= "Các số nguyên tố trong mảng: ";
+
+    for (var i=0; i <array.length;i++) {
+        var check = true;
+
+        if (array[i] < 2) {
+            check = false;
+        } else {
+            for (var j = 2; j <= Math.sqrt(array[i]); j++) {
+                if (array[i]%j === 0) {
+                    check = false;
+                    break;
+                }
+            }
+        }
+        if (check) {
+            result+= array[i] + " ";
+        }
+    }
+    document.getElementById("output").innerHTML = result;
+
+
+
+</script>
+
+</html>

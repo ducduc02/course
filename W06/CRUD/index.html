@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label>Tên khóa học</label>
+  <input type="text" id="courseName">
+
+  <label>Mô tả</label>
+  <input type="text" id="courseDes">
+
+  <label>Giá</label>
+  <input type="text" id="coursePrice">
+
+
+  <button id="btn-update" style="display:none;" onclick="updateCourse()">Lưu</button>
+  <button id="btn-cancel" style="display:none;" onclick="cancelEdit()">Hủy</button>
+  <button id="btn-add" onclick="addCourse()">Thêm khóa học</button>
+
+
+  <ul id="list-courses">
+  </ul>
+  <script src="main.js"></script>
+</body>
+</html>

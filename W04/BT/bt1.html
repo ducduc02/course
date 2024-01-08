@@ -9,24 +9,21 @@
 
 <body>
     <button type="button" onclick="playGame()">Chơi</button>
-
     <script>
         function playGame() {
-
-            var max = parseInt(prompt('Nhập vào khoảng muốn đoán:'));
-
+            var max = +prompt('Nhập vào khoảng muốn đoán:');
             var randomNumber = Math.floor(Math.random() * max) + 1;
 
             do {
-                chooseNumber = parseInt(prompt(`Nhập vào số trong khoảng 1 đến ${max}`));
-                
+                var chooseNumber = +prompt(`Nhập vào số bạn đoán trong khoảng 1 đến ${max}`);
+
+
                 if (chooseNumber === randomNumber) {
                     alert('Chúc mừng! Bạn đã đoán đúng.');
                 } else {
                     alert('Số bạn đoán không chính xác. Hãy thử lại!');
                 }
-
-            } while (chooseNumber !== randomNumber); 
+            } while (chooseNumber !== randomNumber);
         }
     </script>
 </body>
